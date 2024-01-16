@@ -14,8 +14,9 @@
   },
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "react/react-in-jsx-scope": 0,
+    "react/react-in-jsx-scope": "off",
     "quotes": [2, "double", { "avoidEscape": true }],
-    "comma-dangle": "off"
+    "comma-dangle": "off",
+    "import/prefer-default-export": "off"
   }
 }
