@@ -26,7 +26,6 @@ export default styled.button`
   }
 
   ${({ theme, danger }) =>
-    // eslint-disable-next-line operator-linebreak, implicit-arrow-linebreak
     danger &&
     css`
       background: ${theme.colors.danger.main};
