@@ -5,7 +5,7 @@
   },
   "extends": "airbnb",
   "parserOptions": {
-    "ecmaVersion": 2018,
+    "ecmaVersion": 11,
     "sourceType": "module",
     "ecmaFeatures": {
       "modules": true,
@@ -20,6 +20,8 @@
     "import/prefer-default-export": "off",
     "object-curly-newline": "off",
     "implicit-arrow-linebreak": "off",
-    "operator-linebreak": "off"
+    "operator-linebreak": "off",
+    "react/jsx-no-bind": "off",
+    "function-paren-newline": "off"
   }
 }
