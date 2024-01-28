@@ -25,6 +25,7 @@
     "function-paren-newline": "off",
     "react/jsx-one-expression-per-line": "off",
     "no-confusing-arrow": "off",
-    "indent": "off"
+    "indent": "off",
+    "no-promise-executor-return": "off"
   }
 }
