@@ -14,7 +14,7 @@ import edit from "../../assets/images/icons/edit.svg";
 import trash from "../../assets/images/icons/trash.svg";
 
 import Loader from "../../components/Loader";
-import delay from "../../utils/delay";
+import ContactsService from "../../services/ContactsService";
 
 export default function Home() {
   const [contacts, setContacts] = useState([]);
@@ -32,21 +32,17 @@ export default function Home() {
 
   useEffect(() => {
     async function loadContacts() {
-      setIsLoading(true);
+      try {
+        setIsLoading(true);
 
-      await fetch(`http://localhost:3001/contacts?orderBy=${orderBy}`)
-        .then(async (response) => {
-          await delay(500);
+        const contactsList = await ContactsService.listContacts(orderBy);
 
-          const json = await response.json();
-          setContacts(json);
-        })
-        .catch((error) => {
-          console.log("erro", error);
-        })
-        .finally(() => {
-          setIsLoading(false);
-        });
+        setContacts(contactsList);
+      } catch (error) {
+        console.log("error", error);
+      } finally {
+        setIsLoading(false);
+      }
     }
 
     loadContacts();
