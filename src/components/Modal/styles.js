@@ -7,7 +7,7 @@ function getTextColor(theme, danger) {
 export const Overlay = styled.div`
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(5px);
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   left: 0;
@@ -26,13 +26,13 @@ export const Container = styled.div`
   padding: 24px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.04);
 
-  h1 {
+  > h1 {
     font-size: 22px;
     color: ${({ theme, danger }) => getTextColor(theme, danger)};
   }
 
-  p {
-    margin-top: 8px;
+  .modal-body {
+    margin-top: 32px;
   }
 `;
 
@@ -46,7 +46,11 @@ export const Footer = styled.footer`
     background: transparent;
     border: none;
     font-size: 16px;
-    margin-right: 8px;
+    margin-right: 24px;
     color: ${({ theme }) => theme.colors.gray[200]};
+
+    &[disabled] {
+      cursor: not-allowed;
+    }
   }
 `;
